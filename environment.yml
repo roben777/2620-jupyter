@@ -1,0 +1,5 @@
+name: example-environment
+channels:
+  - conda-forge
+dependencies:
+  - xeus-cling>=0.14.0
