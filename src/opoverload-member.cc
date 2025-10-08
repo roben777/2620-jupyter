@@ -15,9 +15,17 @@ class Rational {
     }
 
   // prints the rational on <str> 
-  void print(std::ostream & str);
+  void print(std::ostream & str) const;
 
   Rational operator + (const Rational & r);
+
+  const Rational & operator= (const Rational & r) {
+    std::cout << "Assignment operator with ";
+    //r.print(std::cout);
+    num = r.num;
+    den = r.den;
+    return r;
+  }
 };
 
 Rational Rational::operator + (const Rational & r) {
@@ -37,7 +45,7 @@ void Rational::print(std::ostream & str) {
 
 
 int main() {
-  Rational r1(1,2), r2(3,2), r3;
+  Rational r1(1,2), r2(3,7), r3;
   // std::cout << "operator syntax call" << std::endl;
   r3=r1+r2;
   r3.print(std::cout);
